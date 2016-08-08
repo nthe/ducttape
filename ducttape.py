@@ -7,8 +7,7 @@ def measure_runtime(func):
     def inner_f(*args, **kwargs):
         _st = time()
         temp_r = func(*args, **kwargs)
-        if settings.MEASURE_RUNTIMES_DECORATOR:
-            print("<{}>'s runtime: {}(s).".format(func.__name__, time() - _st))
+        print("<{}>'s runtime: {}(s).".format(func.__name__, time() - _st))
         return temp_r
     return inner_f
 
@@ -54,7 +53,7 @@ def do_profile(sort='cumtime', amount=None):
         import pstats
         import StringIO
 
-        file_name = os.path.join(settings.MEDIA_ROOT, 'logs', "{}.prof".format(func.__name__))
+        file_name = "{}.prof".format(func.__name__)
 
         def inner_f(*args, **kwargs):
             pr = cProfile.Profile()
