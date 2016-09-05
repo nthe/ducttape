@@ -14,6 +14,9 @@ def text(file_name, size, word_len=(3, 7), sentence_len=(3, 14)):
     :param tuple sentence_len:  Variance of sentence length.
     """
     c_size = 0
+    
+    if size < 1:
+        size = 1000
 
     with open(file_name, 'wb') as d:
 
