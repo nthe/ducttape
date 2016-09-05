@@ -1,9 +1,9 @@
 ## pythe
 Bunch of decorators and function I made during code investigation.
 
-__pysk__
+### __pysk__
 
-Module contains functions for retrieval of values (or lines) from JSON / dictionary or text file. 
+Module contains functions for retrieval of values (or lines) from JSON / dictionary or text file. The advantage is that the source file won't be loaded into main memory and may work with invalid JSON(s) / dictionary(ies).
 
 Function `parse` has four parameters:
  - source file
