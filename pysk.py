@@ -93,13 +93,13 @@ def parse(f, source, word, jump):
                 occurrences.append([start_pos, end_pos])
         
         for occurrence in occurrences:
-            f.seek(occurrence[0], 0)
-            results.append(f.read(occurrence[1] - occurrence[0]).strip())
+            f.seek(occurrence[0] - 1, 0)
+            results.append(f.read(occurrence[1] - occurrence[0] + 1).strip())
     
     if not results:
         return None
 
-    return dict(word=results)
+    return results
 
 
 if __name__ == "__main__":
