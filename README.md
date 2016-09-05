@@ -1,5 +1,5 @@
 ## pythe
-Bunch of decorators and function I made during code investigation.
+Basic utilities I use.
 
 ### __pysk__
 
