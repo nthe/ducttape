@@ -1,5 +1,8 @@
 
+__all__ = ['minify']
+
 kwl = ['import', 'from', 'class', 'def', 'if', 'else', 'elif', 'for', 'while', 'try', 'except', 'finally', 'with', 'return'] 
+
 
 def minify(_f, _o=None):
     _o = _o or "min_{}".format(_f)
