@@ -1,8 +1,8 @@
 
 kwl = ['import', 'from', 'class', 'def', 'if', 'else', 'elif', 'for', 'while', 'try', 'except', 'finally', 'with', 'return'] 
 
-def dirtify(_f, _o=None):
-    _o = _o or "dirty_{}".format(_f)
+def minify(_f, _o=None):
+    _o = _o or "min_{}".format(_f)
     indent, old_indent, indent_change = 0, 0, False
     nline = "\n"
     indent_set = False
@@ -85,5 +85,5 @@ if __name__ == "__main__":
         print argv[0]
         print(" !! error: no input file provided\n :: usage: python %s <input_file> [<output_file>}" % argv[0])
         exit(1)
-    dirtify(*argv[1:])
+    minify(*argv[1:])
 
