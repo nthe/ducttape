@@ -26,3 +26,11 @@ pythe.parse('data.json', 'json', 'tags', 10)
 >>> [['drama', 'comedy', 'thriller'], ['horror', 'thriller', 'drama'], ['documentary', 'nature']] 
 ```
 
+### __pymin__
+
+Simple Python script minifier.
+
+```python
+import pymin
+pymin.minify('source.py', 'min_source.py')
+```
