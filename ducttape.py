@@ -1,3 +1,23 @@
+
+def memoize(unsafe=False):
+    """ If already evaluated with given input, return memorized result.
+    :param func: Function, which output(s) will be memorized.
+    """
+    results = {}
+    def wrapper(func):
+        def inner_f(*n):
+            if len(n) > 1 and not unsafe:
+                raise Exception("Using memoizer with several arguments is\
+                        not safe. Set `unsafe=True` if want to use anyway.")
+            else:
+                _n = n[0]
+            if _n not in results:
+                results[_n] = func(*n)
+            return results[_n]
+        return inner_f
+    return wrapper
+
+
 def measure_runtime(func):
     """ Measure runtime of function is seconds.
     :param func: Function, which has to be measured.
@@ -78,3 +98,4 @@ def dict_to_object(_name=None, _dictionary=None):
     :param _dictionary: Python dict, which will be converter to objects properties.
     """
     return type(_name or "Dicttaped", (object,), _dictionary or {})
+
