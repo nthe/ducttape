@@ -34,3 +34,11 @@ Simple Python script minifier.
 import pymin
 pymin.minify('source.py', 'min_source.py')
 ```
+
+### __rerun__
+
+Automatic script re-executor. The script is executed every time the file is modified (saved).
+
+```python
+python rerun.py <python_script_name>.py
+```
